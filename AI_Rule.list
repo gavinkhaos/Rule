@@ -1,4 +1,11 @@
-# DNS 防捕获/直连规则（必须置顶）
+# ==========================================
+# 🛑 关键：节点服务器与 DNS 强制直连（防死锁）
+# ==========================================
+# 1. 允许您的机场节点服务器域名直连解析（根据您日志中的域名添加）
+DOMAIN-KEYWORD,nd-fs-lucky
+DOMAIN-SUFFIX,nd-fs-lucky-3.com
+
+# 2. 基础公共 DNS 直连
 IP-CIDR,223.5.5.5/32,DIRECT
 IP-CIDR,119.29.29.29/32,DIRECT
 IP-CIDR,114.114.114.114/32,DIRECT
@@ -30,10 +37,9 @@ DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 
 # ==========================================
-# 🤖 Google Gemini / Bard
+# 🤖 Google Gemini / Bard (已精简，删除了全局 google.com)
 # ==========================================
 DOMAIN,ai.google.dev
-DOMAIN-SUFFIX,google.com
 DOMAIN-KEYWORD,gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
